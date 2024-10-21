@@ -1,37 +1,38 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp-eta-deploy
+  name: bankapp-ritty-deploy
+  namespace: dev  
   labels:
-    app: bankapp-eta-app
+    app: bankapp-ritty-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: bankapp-eta-app
+      app: bankapp-ritty-app
   template:
     metadata:
       labels:
-        app: bankapp-eta-app
+        app: bankapp-ritty-app
     spec:
       containers:
-      - name: bankapp-eta-container
-        image: loksaieta/bankapp-eta-app
+      - name: bankapp-ritty-container
+        image: ritty471/bankapp-ritty-app
         ports:
         - containerPort: 8082
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: bankapp-eta-np-service
+  name: bankapp-ritty-np-service
+  namespace: dev  
   labels:
-    app: bankapp-eta-app
+    app: bankapp-ritty-app
 spec:
   selector:
-    app: bankapp-eta-app
-
+    app: bankapp-ritty-app
   type: NodePort
   ports:
   - nodePort: 31030  
     port: 8082
-    targetPort: 8082
+    targetPort: 8082  
