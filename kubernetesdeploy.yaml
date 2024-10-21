@@ -1,8 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp-ritty-deploy
-  namespace: dev  
+  name: bankapp-ritty-deploy 
   labels:
     app: bankapp-ritty-app
 spec:
@@ -24,8 +23,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: bankapp-ritty-np-service
-  namespace: dev  
+  name: bankapp-ritty-np-service 
   labels:
     app: bankapp-ritty-app
 spec:
