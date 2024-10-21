@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: bankapp-ritty-deploy 
+  name: bankapp-ritty-deploy
   labels:
     app: bankapp-ritty-app
 spec:
